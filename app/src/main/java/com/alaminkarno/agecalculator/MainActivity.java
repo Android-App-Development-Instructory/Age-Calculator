@@ -1,7 +1,9 @@
 package com.alaminkarno.agecalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.animation.ValueAnimator;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -22,8 +24,9 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button fromDateBTN,toDateBTN,calculateBTN;
-    private TextView resultTV;
+    private CardView fromDateBTN,toDateBTN,calculateBTN;
+    private TextView birthTV,todayTV,errorTv;
+    private TextView yearTV,monthTV,dayTV;
 
     DatePickerDialog.OnDateSetListener dateSetListenerFromDate,dateSetListenerToDate;
 
@@ -35,7 +38,12 @@ public class MainActivity extends AppCompatActivity {
         fromDateBTN = findViewById(R.id.fromAgeBTN);
         toDateBTN = findViewById(R.id.toAgeButton);
         calculateBTN = findViewById(R.id.calculateAgeBTN);
-        resultTV = findViewById(R.id.resultTV);
+        birthTV = findViewById(R.id.birthTV);
+        todayTV = findViewById(R.id.todayTV);
+        errorTv = findViewById(R.id.errorTV);
+        yearTV = findViewById(R.id.yearTV);
+        monthTV = findViewById(R.id.monthTV);
+        dayTV = findViewById(R.id.dayTV);
 
 
         Calendar calendar = Calendar.getInstance();
@@ -45,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String todayDate = simpleDateFormat.format(calendar.getTime());
-        toDateBTN.setText(todayDate);
+        birthTV.setText(todayDate);
 
         fromDateBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
                 String birthDate = dayOfMonth+"/"+month+"/"+year;
-                fromDateBTN.setText(birthDate);
+                birthTV.setText(birthDate);
             }
         };
 
@@ -85,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
                 String todayDate = dayOfMonth+"/"+month+"/"+year;
-                toDateBTN.setText(todayDate);
+                todayTV.setText(todayDate);
             }
         };
 
@@ -94,8 +102,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String birthDate = fromDateBTN.getText().toString();
-                String todayDate = toDateBTN.getText().toString();
+                errorTv.setText("");
+
+                String birthDate = birthTV.getText().toString();
+                String todayDate = todayTV.getText().toString();
 
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -113,10 +123,15 @@ public class MainActivity extends AppCompatActivity {
                         int month = period.getMonths();
                         int day = period.getDays();
 
-                        resultTV.setText("You are "+year+" Years, "+month+" Months, "+day+" Days Old.");
+
+                        animateTextWithResult(year,yearTV);
+                        animateTextWithResult(month,monthTV);
+                        animateTextWithResult(day,dayTV);
+
+
                     }
                     else{
-                        resultTV.setText("Birthdate should not be Larger than today's Date.");
+                        errorTv.setText("Birthdate should not be Larger than today's Date.");
                     }
 
                 } catch (ParseException e) {
@@ -128,5 +143,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void animateTextWithResult(int result, TextView textView) {
+
+        ValueAnimator animator = new ValueAnimator();
+        animator.setObjectValues(0,result);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                textView.setText(String.valueOf(animation.getAnimatedValue()));
+            }
+        });
+        animator.setDuration(2000);
+        animator.start();
     }
 }
