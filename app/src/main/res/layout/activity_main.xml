@@ -361,6 +361,6 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#30BDB2"/>
+        android:textColor="#E91E63"/>
 
 </LinearLayout>

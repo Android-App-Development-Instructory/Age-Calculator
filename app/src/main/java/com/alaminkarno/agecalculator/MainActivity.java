@@ -103,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 errorTv.setText("");
+                animateTextWithResult(0,yearTV);
+                animateTextWithResult(0,monthTV);
+                animateTextWithResult(0,dayTV);
 
                 String birthDate = birthTV.getText().toString();
                 String todayDate = todayTV.getText().toString();
