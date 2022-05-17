@@ -18,11 +18,11 @@ Link: https://instructory.net/courses/android-app-development-course-basic-to-ad
 
 | Splash Screen      |  Home Screen |  Select Date Screen |
 | :---:       |    :----:   | :----:   |
-| <img src="screenshots/age_calculator_slpash_screen.png" width="250">       |  <img src="screenshots/age_calculator_home_screen.png" width="250">     |  <img src="screenshots/age_calculator_date_dialog_screen.png" width="250">  |
+| <img src="screenshots/age_calculator_slpash_screen.png">       |  <img src="screenshots/age_calculator_home_screen.png">     |  <img src="screenshots/age_calculator_date_dialog_screen.png">  |
 
 | Result Screen      |  Error Screen | 
 | :---:       |    :----:   | 
-| <img src="screenshots/age_calculator_result_screen.png" width="250">       |  <img src="screenshots/age_calculator_date_error_screen.png" width="250">     |
+| <img src="screenshots/age_calculator_result_screen.png">       |  <img src="screenshots/age_calculator_date_error_screen.png">     |
 
 ### Disclaimer
 This project is made only for educational purpose. Anyone can use it but the risk has to be taken by the user.
