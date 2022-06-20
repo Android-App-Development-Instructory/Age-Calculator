@@ -11,7 +11,7 @@ Link: https://youtube.com/playlist?list=PLDitZ-MAvK-5pi6dvtd4D10YqGh8SvH3c
 
 
 ### ANDROID APP DEVELOPMENT COURSE (BANGLA):
-Link: https://instructory.net/courses/android-app-development-course-basic-to-advanced-2
+Link: https://cutt.ly/oJxeUxL
 
 ### Screenshots:
 
@@ -34,7 +34,7 @@ for any query please contact me.
 ##### Junior Software Engineer (Android & iOS) at Rokomari.com
 
 __Email :__ [ alamin.karno@outlook.com ](mailto:alamin.karno@outlook.com) <br>
-__Github :__ [Md. Al-Amin](https://github.com/karno786)<br>
+__Github :__ [Md. Al-Amin](https://github.com/alamin-karno)<br>
 __Facebook :__ [মোঃ আল-আমিন খন্দকার কর্ণ](https://facebook.com/alamin.kanro786) <br>
 __Linkedin :__ [Md. Alamin Karno](https://www.linkedin.com/in/alaminkarno/)
 <br>
